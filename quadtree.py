@@ -13,9 +13,7 @@ class Quadtree:
         self.profundidad = profundidad
         self.max_profundidad = max_profundidad
 
-    # ------------------------------------------------------------
     # Subdivisión: divide el nodo actual en 4 cuadrantes
-    # ------------------------------------------------------------
     def subdividir(self):
         x, y = self.frontera.x, self.frontera.y
         w, h = self.frontera.ancho / 2, self.frontera.alto / 2
@@ -32,9 +30,8 @@ class Quadtree:
 
         self.dividido = True
 
-    # ------------------------------------------------------------
     # Inserción de un punto
-    # ------------------------------------------------------------
+
     def insertar(self, punto):
         # Si el punto no está dentro de esta frontera, se ignora
         if not self.frontera.contiene(punto):
@@ -55,9 +52,9 @@ class Quadtree:
                 self.suroeste.insertar(punto) or
                 self.sureste.insertar(punto))
 
-    # ------------------------------------------------------------
+    
     # Búsqueda de puntos dentro de un rango
-    # ------------------------------------------------------------
+
     def buscar(self, rango: Rectangulo, encontrados=None):
         if encontrados is None:
             encontrados = []
@@ -80,9 +77,9 @@ class Quadtree:
 
         return encontrados
 
-    # ------------------------------------------------------------
+
     # Eliminación de un punto
-    # ------------------------------------------------------------
+
     def eliminar(self, punto):
         # Si el punto no está dentro de la frontera, ignorar
         if not self.frontera.contiene(punto):
@@ -102,9 +99,8 @@ class Quadtree:
 
         return False
 
-    # ------------------------------------------------------------
     # Dibujo del Quadtree (usado en demo.py)
-    # ------------------------------------------------------------
+
     def dibujar(self, ax):
         """Dibuja la frontera y sus subdivisiones recursivamente."""
         rect = self.frontera
