@@ -1,4 +1,4 @@
-# quadtree.py
+
 from rectangulo import Rectangulo
 
 class Quadtree:

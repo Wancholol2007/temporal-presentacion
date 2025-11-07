@@ -1,4 +1,4 @@
-# demo.py
+
 import matplotlib.pyplot as plt
 from quadtree import Quadtree
 from rectangulo import Rectangulo
